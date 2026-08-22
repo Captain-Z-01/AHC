@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>CAPTAIN Z | ACCOUNT HELP CENTER</title>
+<meta name="description" content="Pusat panduan untuk memulihkan, mengamankan, dan memelihara berbagai akun digital melalui prosedur resmi dan aman.">
+<meta name="application-name" content="CAPTAIN Z ACCOUNT HELP CENTER">
+<meta name="author" content="Captain Z-MD">
+<meta name="keywords" content="pemulihan akun, keamanan akun, akun diretas, lupa password, Google, Instagram, TikTok, WhatsApp, Discord, akun game">
+<meta name="theme-color" content="#0f172a">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://captain-z.acount-help-center.pages.dev/">
+<link rel="icon" type="image/png" href="assets/icon-192.png">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="manifest" href="manifest.json">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CAPTAIN Z ACCOUNT HELP CENTER">
+<meta property="og:description" content="Pusat panduan pemulihan dan keamanan akun digital melalui prosedur resmi dan aman.">
+<meta property="og:url" content="https://captain-z.acount-help-center.pages.dev/">
+<meta property="og:site_name" content="CAPTAIN Z ACCOUNT HELP CENTER">
+<meta property="og:locale" content="id_ID">
+<meta property="og:image" content="https://captain-z.acount-help-center.pages.dev/assets/preview.jpg">
+<meta property="og:image:secure_url" content="https://captain-z.acount-help-center.pages.dev/assets/preview.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CAPTAIN Z ACCOUNT HELP CENTER">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CAPTAIN Z ACCOUNT HELP CENTER">
+<meta name="twitter:description" content="Pusat panduan pemulihan dan keamanan akun digital melalui prosedur resmi dan aman.">
+<meta name="twitter:image" content="https://captain-z.acount-help-center.pages.dev/assets/preview.jpg">
+<meta name="twitter:image:alt" content="CAPTAIN Z ACCOUNT HELP CENTER">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <aside class="sidebar" id="sidebar" aria-label="Navigasi utama">
+    <div class="sidebar-head">
+      <a class="brand" href="https://captain-z.pages.dev" aria-label="Website Captain Z">
+        <span class="brand-mark">
+          <img src="https://avatars.githubusercontent.com/u/308199074?v=4" id="siteLogo" alt="Logo Pusat Panduan Akun">
+        </span>
+        <span>
+          <strong>Captain Z</strong>
+          <small>Account Help Center</small>
+        </span>
+      </a>
+      <button
+        class="icon-btn sidebar-close"
+        id="sidebarClose"
+        type="button"
+        aria-label="Tutup menu"
+      >×</button>
+    </div>
+    <div class="sidebar-tools">
+      <label class="side-search">
+        <span aria-hidden="true">⌕</span>
+        <input
+          id="sidebarSearch"
+          type="search"
+          placeholder="Cari panduan..."
+          autocomplete="off"
+          aria-label="Cari panduan"
+        >
+      </label>
+    </div>
+    <nav
+      id="sidebarNav"
+      class="sidebar-nav"
+      aria-label="Kategori panduan"
+    ></nav>
+    <div class="sidebar-foot">
+      <button
+        class="install-btn"
+        id="installBtn"
+        type="button"
+        hidden
+      >Instal aplikasi</button>
+      <a
+        href="#security-checklist"
+        class="security-link"
+      >Checklist keamanan akun</a>
+    </div>
+  </aside>
+  <main class="main-content">
+    <header class="topbar">
+      <button
+        class="icon-btn menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Buka menu"
+        aria-controls="sidebar"
+      >☰</button>
+      <div class="topbar-title">
+        ACCOUNT HELP CENTER
+      </div>
+      <div class="topbar-actions">
+        <button
+          class="theme-indicator"
+          id="themeIndicator"
+          type="button"
+          aria-label="Sinkronisasi tema"
+        >Tema otomatis</button>
+      </div>
+    </header>
+    <section id="globalSearch" aria-label="Pencarian artikel">
+      <div class="hero-search">
+        <span aria-hidden="true">⌕</span>
+        <input
+          id="heroSearch"
+          type="search"
+          placeholder="Cari: akun diretas, lupa password, Google, Instagram..."
+          autocomplete="off"
+          spellcheck="false"
+          aria-label="Cari artikel"
+        >
+        <kbd>Ctrl K</kbd>
+      </div>
+    </section>
+    <section
+      id="searchPanel"
+      class="search-panel"
+      hidden
+      aria-live="polite"
+      aria-label="Hasil pencarian"
+    >
+      <div class="search-panel-inner">
+        <div>
+          <span class="eyebrow">PENCARIAN</span>
+          <h2 id="searchTitle">Hasil pencarian</h2>
+        </div>
+        <button
+          class="text-btn"
+          id="closeSearch"
+          type="button"
+        >Tutup</button>
+      </div>
+      <div
+        id="searchResults"
+        class="search-results"
+      ></div>
+    </section>
+    <div
+      id="appView"
+      class="content-wrap"
+    ></div>
+  </main>
+</div>
+<template id="homeTemplate">
+  <section class="hero-section">
+    <div class="hero-copy">
+      <span class="eyebrow">
+        ACCOUNT HELP CENTER
+      </span>
+      <h1>
+        Pulihkan akses. Amankan akun. Tetap terkendali.
+      </h1>
+      <p>
+        Pusat panduan praktis untuk membantu memulihkan,
+        mengamankan, dan memelihara akun digital Anda melalui
+        prosedur resmi dan langkah yang aman.
+      </p>
+      <div class="trust-strip">
+        <span>✓ Fokus pemulihan resmi</span>
+        <span>✓ Tanpa bypass keamanan</span>
+        <span>✓ Mobile friendly</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=82"
+        alt="Laptop dan perangkat untuk keamanan akun"
+        loading="eager"
+      >
+    </div>
+  </section>
+  <section class="quick-section">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">
+          JELAJAHI PANDUAN
+        </span>
+        <h2>
+          Topik yang paling sering dicari
+        </h2>
+      </div>
+    </div>
+    <div
+      id="quickCards"
+      class="quick-grid"
+    ></div>
+  </section>
+    <section class="category-section">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">
+          KATEGORI
+        </span>
+        <h2>
+          Semua pusat bantuan
+        </h2>
+      </div>
+      <span
+        id="articleCount"
+        class="result-count"
+      ></span>
+    </div>
+
+    <div
+      id="categoryCards"
+      class="category-grid"
+    ></div>
+  </section>
+
+ 
+  <section class="admin-contact">
+    <h3>Butuh bantuan atau menemukan kesalahan?</h3>
+
+    <p>
+      Jika menemukan informasi yang salah, link resmi yang sudah berubah,
+      atau ingin menyarankan artikel baru, silakan hubungi admin.
+    </p>
+
+    <div class="contact-buttons">
+      <a href="mailto:captain-z.md@gmail.com?subject=Kontak%20Admin">
+        📩 Kontak Admin
+      </a>
+
+      <a href="mailto:captain-z.md@gmail.com?subject=Laporkan%20Kesalahan">
+        ⚠️ Laporkan Kesalahan
+      </a>
+
+      <a href="mailto:captain-z.md@gmail.com?subject=Saran%20Artikel">
+        💡 Saran Artikel
+      </a>
+    </div>
+  </section>
+
+</template>
+</template>
+<script src="config.js"></script>
+<script src="articles.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
