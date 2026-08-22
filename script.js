@@ -70,6 +70,209 @@ const searchResults=document.getElementById('searchResults');
 const searchTitle=document.getElementById('searchTitle');
 const sidebarSearch=document.getElementById('sidebarSearch');
 const installBtn=document.getElementById('installBtn');
+const SMART_OFFICIAL_GLOBAL = {
+  "2FA": "https://support.google.com/accounts/answer/185839",
+  "passkey": "https://support.google.com/accounts/answer/13548313",
+  "backup code": "https://support.google.com/accounts/answer/1187538",
+  "kode cadangan": "https://support.google.com/accounts/answer/1187538",
+  "Google Prompt": "https://support.google.com/accounts/answer/7026266"
+};
+
+const SMART_OFFICIAL_ALIASES = {
+  "google": "google",
+  "gmail": "google",
+  "akun google": "google",
+  "instagram": "instagram",
+  "ig": "instagram",
+  "tiktok": "tiktok",
+  "tik tok": "tiktok",
+  "discord": "discord",
+  "whatsapp": "whatsapp",
+  "wa": "whatsapp",
+  "facebook": "facebook",
+  "fb": "facebook",
+  "telegram": "telegram",
+  "free fire": "freefire",
+  "garena": "freefire",
+  "mobile legends": "mobilelegends",
+  "ml": "mobilelegends",
+  "pubg": "pubg",
+  "roblox": "roblox",
+  "minecraft": "minecraft",
+  "genshin": "genshin"
+};
+
+function getSmartOfficialPlatform(article, container) {
+  const value = [
+    article?.title || "",
+    article?.description || "",
+    article?.category || "",
+    ...(article?.tags || []),
+    container?.textContent || ""
+  ].join(" ").toLowerCase();
+
+  for (const [name, platform] of Object.entries(SMART_OFFICIAL_ALIASES)) {
+    if (value.includes(name)) return platform;
+  }
+
+  return null;
+}
+
+function activateSmartOfficialLinks(article) {
+  const container = document.querySelector(".article-content");
+  if (!container || !article) return;
+
+  const links = {
+  "verifikasi kepemilikan Google": "https://support.google.com/webmasters/answer/7687615?hl=id", 
+  "2FA": "https://support.google.com/accounts/answer/185839",
+  "2-step verification": "https://support.google.com/accounts/answer/185839",
+  "verifikasi dua langkah": "https://support.google.com/accounts/answer/185839",
+  "autentikasi dua faktor": "https://support.google.com/accounts/answer/185839",
+
+  "passkey": "https://support.google.com/accounts/answer/13548313",
+
+  "password": "https://myaccount.google.com/security",
+  "kata sandi": "https://myaccount.google.com/security",
+
+  "backup code": "https://support.google.com/accounts/answer/1187538",
+  "backup codes": "https://support.google.com/accounts/answer/1187538",
+  "kode cadangan": "https://support.google.com/accounts/answer/1187538",
+
+  "Google Prompt": "https://support.google.com/accounts/answer/7026266",
+  "Google prompt": "https://support.google.com/accounts/answer/7026266",
+  "prompt": "https://support.google.com/accounts/answer/7026266",
+
+  "OTP": "https://support.google.com/accounts/answer/185839",
+  "kode verifikasi": "https://support.google.com/accounts/answer/185839",
+  "verification code": "https://support.google.com/accounts/answer/185839",
+
+  "recovery": "https://support.google.com/accounts/answer/7682439",
+  "account recovery": "https://support.google.com/accounts/answer/7682439",
+  "pemulihan akun": "https://support.google.com/accounts/answer/7682439",
+
+  "recovery email": "https://support.google.com/accounts/answer/183723",
+  "email pemulihan": "https://support.google.com/accounts/answer/183723",
+
+  "recovery phone": "https://support.google.com/accounts/answer/183723",
+  "nomor pemulihan": "https://support.google.com/accounts/answer/183723",
+
+  "security checkup": "https://myaccount.google.com/security-checkup",
+  "Security Checkup": "https://myaccount.google.com/security-checkup",
+
+  "security settings": "https://myaccount.google.com/security",
+  "pengaturan keamanan": "https://myaccount.google.com/security",
+
+  "perangkat": "https://myaccount.google.com/device-activity",
+  "devices": "https://myaccount.google.com/device-activity",
+
+  "aktivitas keamanan": "https://myaccount.google.com/notifications",
+  "security activity": "https://myaccount.google.com/notifications",
+
+  "third-party apps": "https://myaccount.google.com/connections",
+  "aplikasi pihak ketiga": "https://myaccount.google.com/connections",
+
+  "phishing": "https://support.google.com/accounts/answer/7507744",
+  "link phishing": "https://support.google.com/accounts/answer/7507744",
+
+  "suspicious activity": "https://support.google.com/accounts/answer/140921",
+  "aktivitas mencurigakan": "https://support.google.com/accounts/answer/140921"
+};
+
+  const terms = Object.keys(links).sort(
+    (a, b) => b.length - a.length
+  );
+
+  const walker = document.createTreeWalker(
+    container,
+    NodeFilter.SHOW_TEXT,
+    {
+      acceptNode(node) {
+        const parent = node.parentElement;
+
+        if (
+          !parent ||
+          ["A", "SCRIPT", "STYLE", "CODE", "PRE", "TEXTAREA"].includes(
+            parent.tagName
+          )
+        ) {
+          return NodeFilter.FILTER_REJECT;
+        }
+
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    }
+  );
+
+  const textNodes = [];
+  let node;
+
+  while ((node = walker.nextNode())) {
+    textNodes.push(node);
+  }
+
+  textNodes.forEach(textNode => {
+    const text = textNode.nodeValue;
+    const lower = text.toLowerCase();
+
+    let position = 0;
+    let changed = false;
+
+    const fragment = document.createDocumentFragment();
+
+    while (position < text.length) {
+      let foundTerm = null;
+      let foundIndex = Infinity;
+
+      for (const term of terms) {
+        const index = lower.indexOf(
+          term.toLowerCase(),
+          position
+        );
+
+        if (index !== -1 && index < foundIndex) {
+          foundTerm = term;
+          foundIndex = index;
+        }
+      }
+
+      if (!foundTerm) {
+        fragment.appendChild(
+          document.createTextNode(text.slice(position))
+        );
+        break;
+      }
+
+      if (foundIndex > position) {
+        fragment.appendChild(
+          document.createTextNode(
+            text.slice(position, foundIndex)
+          )
+        );
+      }
+
+      const link = document.createElement("a");
+
+      link.href = links[foundTerm];
+      link.textContent = text.slice(
+        foundIndex,
+        foundIndex + foundTerm.length
+      );
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.className = "official-link";
+      link.title = "Buka sumber resmi";
+
+      fragment.appendChild(link);
+
+      position = foundIndex + foundTerm.length;
+      changed = true;
+    }
+
+    if (changed) {
+      textNode.parentNode.replaceChild(fragment, textNode);
+    }
+  });
+}
 function saveTheme(){const theme=localStorage.getItem((window.SITE_CONFIG&&window.SITE_CONFIG.themeKey)||'Captain-z-MD.theme');document.body.classList.toggle('theme-dark',theme==='dark'||theme==='black');document.getElementById('themeIndicator').textContent=theme?`Tema: ${theme}`:'Tema otomatis';}
 function renderNav(){
   sidebarNav.innerHTML=categories.map(cat=>{const items=articles.filter(a=>categoryMatch[a.category]===cat.slug);const open=state.navOpen.has(cat.slug);return `<div class="nav-category ${open?'open':''}"><button class="nav-cat-btn" data-toggle-cat="${cat.slug}"><span class="nav-cat-left"><span class="nav-icon">${cat.icon}</span><span>${cat.name}</span></span><span class="nav-chevron">›</span></button><div class="nav-links">${items.map(a=>`<a class="nav-link ${location.hash.includes(a.slug)?'active':''}" href="#${a.slug}" data-route="article" data-slug="${a.slug}">${a.title}</a>`).join('')}</div></div>`}).join('');
@@ -285,9 +488,10 @@ function articlePage(slug){
 
       </div>
     </article>
-  `;
+    `;
 
-  scrollTop();
+activateSmartOfficialLinks(a);
+scrollTop();
 }
 function renderFooter(){
   return `<footer class="footer"><div class="footer-brand"><strong>${siteConfig.footerBrand||'CAPTAIN Z'}</strong><span>${siteConfig.footerTitle||'Account Help Center'}</span></div><p class="footer-description">${siteConfig.footerDescription||'Pusat panduan pemulihan dan keamanan akun digital melalui prosedur resmi dan aman.'}</p><nav class="footer-links" aria-label="Navigasi footer">${(siteConfig.footerLinks||[]).map(link=>`<a href="${link.href}">${link.label}</a>`).join('')}</nav><div class="footer-divider"></div><div class="footer-bottom"><span>${siteConfig.footerPrimary||''}</span><span>${siteConfig.footerSecondary||''}</span></div></footer>`;
