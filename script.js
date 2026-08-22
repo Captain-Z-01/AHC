@@ -392,16 +392,16 @@ function articlePage(slug){
               <div class="feedback-buttons">
                 <a href="https://forms.gle/xEDWX3d9S2wvJVPM7"
                    target="_blank"
-                   rel="noopener noreferrer">
-                  <span>👍</span>
+                   rel="noopener noreferrer">               
                   <span>Ya, membantu</span>
+                  <span>👍</span>
                 </a>
 
                 <a href="https://forms.gle/xEDWX3d9S2wvJVPM7"
                    target="_blank"
                    rel="noopener noreferrer">
-                  <span>👎</span>
                   <span>Tidak membantu</span>
+                  <span>👎</span>
                 </a>
               </div>
             </div>
