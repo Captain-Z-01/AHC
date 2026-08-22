@@ -28,6 +28,26 @@ const OFF={
   minecraft:'https://help.minecraft.net/',
   genshin:'https://www.hoyolab.com/article/23709'
 };
+const SECURITY_IMAGES = {
+  'security-strong-password': IMG.password,
+  'security-2fa': IMG.security,
+  'security-passkey': IMG.password,
+  'security-recovery-email': IMG.email,
+  'security-recovery-phone': IMG.phone,
+  'security-phishing': IMG.email,
+  'security-fake-login-link': IMG.email,
+  'security-malicious-apps': IMG.devices,
+  'security-foreign-session': IMG.devices,
+
+  'security-hacked-signs': IMG.cybersecurity,
+  'security-after-hack': IMG.cybersecurity,
+  'security-prevent-repeat': IMG.cybersecurity,
+
+  'security-checklist': IMG.security
+};
+function getSecurityImage(slug){
+  return SECURITY_IMAGES[slug] || IMG.security;
+}
 function article(slug,title,category,description,image,tags,sections,official,officialLabel='Buka bantuan resmi'){return{slug,title,category,description,image,tags,sections,official,officialLabel}}
 const A=[];
 function add(x){A.push(x)}
@@ -542,27 +562,48 @@ const security=[
 const secOfficial={
 'security-strong-password':OFF.googleSecurity,'security-2fa':OFF.google2fa,'security-passkey':'https://www.google.com/account/about/passkeys/','security-recovery-email':OFF.googleSecurity,'security-recovery-phone':OFF.googleSecurity,'security-phishing':'https://safety.google/security/security-tips/','security-fake-login-link':'https://safety.google/security/security-tips/','security-malicious-apps':OFF.googleSecurity,'security-foreign-session':OFF.googleSecurity,'security-hacked-signs':OFF.googleSecurity,'security-after-hack':OFF.google,'security-prevent-repeat':OFF.googleSecurity,'security-checklist':OFF.googleSecurity};
 function getSecurityImage(slug){
-  const s=slug.toLowerCase();
+  const s = slug.toLowerCase();
 
-  if(s.includes('phishing')||s.includes('fake')||s.includes('penipuan'))
-    return IMG.email;
-
-  if(s.includes('passkey'))
+  if(s === 'security-strong-password')
     return IMG.password;
 
-  if(s.includes('password')||s.includes('kata-sandi')||s.includes('sandi'))
-    return IMG.password;
-
-  if(s.includes('2fa')||s.includes('otp')||s.includes('verifikasi'))
+  if(s === 'security-2fa')
     return IMG.security;
 
-  if(s.includes('device')||s.includes('perangkat')||s.includes('session')||s.includes('login'))
+  if(s === 'security-passkey')
+    return IMG.password;
+
+  if(s === 'security-recovery-email')
+    return IMG.email;
+
+  if(s === 'security-recovery-phone')
+    return IMG.phone;
+
+  if(s === 'security-phishing')
+    return IMG.email;
+
+  if(s === 'security-fake-login-link')
+    return IMG.email;
+
+  if(s === 'security-malicious-apps')
     return IMG.devices;
 
-  if(s.includes('hack')||s.includes('hacked')||s.includes('retas')||s.includes('diretas'))
-    return IMG.cybersecurity;
+  if(s === 'security-foreign-session')
+    return IMG.devices;
 
-  return IMG.cybersecurity;
+  if(s === 'security-hacked-signs')
+    return IMG.security;
+
+  if(s === 'security-after-hack')
+    return IMG.security;
+
+  if(s === 'security-prevent-repeat')
+    return IMG.security;
+
+  if(s === 'security-checklist')
+    return IMG.security;
+
+  return IMG.security;
 }
 security.forEach(([slug,title,description])=>add(article(
   slug,
