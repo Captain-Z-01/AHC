@@ -118,7 +118,7 @@ function activateSmartOfficialLinks(article) {
   const links = {
   "fokus pada pengamanan akun" : "https://support.google.com/chrome/answer/6294825?hl=id", 
   "verifikasi kepemilikan Google": "https://support.google.com/webmasters/answer/7687615?hl=id", 
-  "2FA": "https://support.google.com/accounts/answer/185839",
+  "Aktifkan 2FA": "https://support.google.com/accounts/answer/185839",
   "2-step verification": "https://support.google.com/accounts/answer/185839",
   "verifikasi dua langkah": "https://support.google.com/accounts/answer/185839",
   "autentikasi dua faktor": "https://support.google.com/accounts/answer/185839",
