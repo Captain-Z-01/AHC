@@ -94,7 +94,197 @@ const SMART_OFFICIAL_ALIASES = {
   "minecraft": "minecraft",
   "genshin": "genshin"
 };
+const OFFICIAL_LINKS = {
+  google: {
+    "2FA": "https://support.google.com/accounts/answer/185839",
+    "2-step verification": "https://support.google.com/accounts/answer/185839",
+    "verifikasi dua langkah": "https://support.google.com/accounts/answer/185839",
+    "autentikasi dua faktor": "https://support.google.com/accounts/answer/185839",
 
+    "MFA": "https://support.google.com/accounts/answer/185839",
+    "OTP": "https://support.google.com/accounts/answer/185839",
+    "verification code": "https://support.google.com/accounts/answer/185839",
+    "kode verifikasi": "https://support.google.com/accounts/answer/185839",
+
+    "Google Prompt": "https://support.google.com/accounts/answer/7026266",
+    "Google prompt": "https://support.google.com/accounts/answer/7026266",
+    "prompt": "https://support.google.com/accounts/answer/7026266",
+
+    "passkey": "https://support.google.com/accounts/answer/13548313",
+    "security key": "https://support.google.com/accounts/answer/6103523",
+    "kunci keamanan": "https://support.google.com/accounts/answer/6103523",
+
+    "password": "https://myaccount.google.com/security",
+    "kata sandi": "https://myaccount.google.com/security",
+    "sandi": "https://myaccount.google.com/security",
+
+    "backup code": "https://support.google.com/accounts/answer/1187538",
+    "backup codes": "https://support.google.com/accounts/answer/1187538",
+    "kode cadangan": "https://support.google.com/accounts/answer/1187538",
+
+    "recovery": "https://support.google.com/accounts/answer/7682439",
+    "account recovery": "https://support.google.com/accounts/answer/7682439",
+    "pemulihan akun": "https://support.google.com/accounts/answer/7682439",
+
+    "recovery email": "https://support.google.com/accounts/",
+    "email pemulihan": "https://support.google.com/accounts/",
+
+    "recovery phone": "https://support.google.com/accounts/",
+    "nomor pemulihan": "https://support.google.com/accounts/",
+
+    "security checkup": "https://myaccount.google.com/security-checkup",
+    "Security Checkup": "https://myaccount.google.com/security-checkup",
+
+    "security settings": "https://myaccount.google.com/security",
+    "pengaturan keamanan": "https://myaccount.google.com/security",
+
+    "devices": "https://myaccount.google.com/device-activity",
+    "perangkat": "https://myaccount.google.com/device-activity",
+
+    "security activity": "https://myaccount.google.com/notifications",
+    "aktivitas keamanan": "https://myaccount.google.com/notifications",
+
+    "third-party apps": "https://myaccount.google.com/connections",
+    "aplikasi pihak ketiga": "https://myaccount.google.com/connections",
+
+    "phishing": "https://support.google.com/accounts/answer/7507744",
+    "link phishing": "https://support.google.com/accounts/answer/7507744",
+
+    "suspicious activity": "https://support.google.com/accounts/answer/140921",
+    "aktivitas mencurigakan": "https://support.google.com/accounts/answer/140921"
+  },
+
+  tiktok: {
+    "2FA": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
+    "2-step verification": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
+    "MFA": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
+
+    "password": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
+    "kata sandi": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
+
+    "OTP": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
+    "verification code": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
+    "kode verifikasi": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
+
+    "passkey": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
+
+    "recovery": "https://support.tiktok.com/en/log-in-troubleshoot/log-in/recover-an-account",
+    "pemulihan akun": "https://support.tiktok.com/en/log-in-troubleshoot/log-in/recover-an-account",
+
+    "phishing": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/avoid-fraudulent-message-attacks-on-tiktok",
+
+    "suspicious activity": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
+    "perangkat": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety"
+  },
+
+  instagram: {
+    "2FA": "https://help.instagram.com/",
+    "MFA": "https://help.instagram.com/",
+
+    "password": "https://help.instagram.com/",
+    "kata sandi": "https://help.instagram.com/",
+
+    "OTP": "https://help.instagram.com/",
+    "verification code": "https://help.instagram.com/",
+    "kode verifikasi": "https://help.instagram.com/",
+
+    "recovery": "https://www.instagram.com/hacked/",
+    "account recovery": "https://www.instagram.com/hacked/",
+    "pemulihan akun": "https://www.instagram.com/hacked/",
+
+    "phishing": "https://help.instagram.com/",
+    "link phishing": "https://help.instagram.com/",
+
+    "suspicious activity": "https://help.instagram.com/",
+    "aktivitas mencurigakan": "https://help.instagram.com/",
+
+    "login": "https://help.instagram.com/",
+    "session": "https://help.instagram.com/",
+    "device": "https://help.instagram.com/"
+  },
+
+  discord: {
+    "2FA": "https://support.discord.com/hc/en-us",
+    "MFA": "https://support.discord.com/hc/en-us",
+
+    "password": "https://support.discord.com/hc/en-us",
+    "kata sandi": "https://support.discord.com/hc/en-us",
+
+    "OTP": "https://support.discord.com/hc/en-us",
+    "verification code": "https://support.discord.com/hc/en-us",
+    "kode verifikasi": "https://support.discord.com/hc/en-us",
+
+    "backup code": "https://support.discord.com/hc/en-us",
+    "backup codes": "https://support.discord.com/hc/en-us",
+    "kode cadangan": "https://support.discord.com/hc/en-us",
+
+    "authenticator": "https://support.discord.com/hc/en-us",
+    "authenticator app": "https://support.discord.com/hc/en-us",
+
+    "account hacked": "https://support.discord.com/hc/en-us",
+    "akun diretas": "https://support.discord.com/hc/en-us"
+  },
+
+  whatsapp: {
+    "2FA": "https://faq.whatsapp.com/",
+    "two-step verification": "https://faq.whatsapp.com/",
+    "verifikasi dua langkah": "https://faq.whatsapp.com/",
+
+    "PIN": "https://faq.whatsapp.com/",
+    "OTP": "https://faq.whatsapp.com/",
+
+    "verification code": "https://faq.whatsapp.com/",
+    "kode verifikasi": "https://faq.whatsapp.com/",
+    "registration code": "https://faq.whatsapp.com/",
+
+    "recovery": "https://faq.whatsapp.com/",
+    "pemulihan akun": "https://faq.whatsapp.com/",
+
+    "account hacked": "https://faq.whatsapp.com/",
+    "akun diretas": "https://faq.whatsapp.com/"
+  },
+
+  facebook: {
+    "2FA": "https://www.facebook.com/help/",
+    "MFA": "https://www.facebook.com/help/",
+
+    "password": "https://www.facebook.com/help/",
+    "kata sandi": "https://www.facebook.com/help/",
+
+    "OTP": "https://www.facebook.com/help/",
+    "verification code": "https://www.facebook.com/help/",
+    "kode verifikasi": "https://www.facebook.com/help/",
+
+    "recovery": "https://www.facebook.com/hacked/",
+    "account recovery": "https://www.facebook.com/hacked/",
+    "pemulihan akun": "https://www.facebook.com/hacked/",
+
+    "phishing": "https://www.facebook.com/help/",
+    "link phishing": "https://www.facebook.com/help/",
+
+    "suspicious activity": "https://www.facebook.com/help/",
+    "aktivitas mencurigakan": "https://www.facebook.com/help/"
+  },
+
+  telegram: {
+    "2FA": "https://telegram.org/faq#q-what-is-two-step-verification",
+    "two-step verification": "https://telegram.org/faq#q-what-is-two-step-verification",
+    "verifikasi dua langkah": "https://telegram.org/faq#q-what-is-two-step-verification",
+
+    "password": "https://telegram.org/faq#q-what-is-two-step-verification",
+    "kata sandi": "https://telegram.org/faq#q-what-is-two-step-verification",
+
+    "OTP": "https://telegram.org/faq",
+    "verification code": "https://telegram.org/faq",
+    "kode verifikasi": "https://telegram.org/faq",
+
+    "login code": "https://telegram.org/faq",
+    "kode login": "https://telegram.org/faq",
+
+    "recovery": "https://telegram.org/faq",
+    "pemulihan akun": "https://telegram.org/faq"
+  }
+};
 function getSmartOfficialPlatform(article, container) {
   const value = [
     article?.title || "",
@@ -104,73 +294,35 @@ function getSmartOfficialPlatform(article, container) {
     container?.textContent || ""
   ].join(" ").toLowerCase();
 
+  const matches = [];
+
   for (const [name, platform] of Object.entries(SMART_OFFICIAL_ALIASES)) {
-    if (value.includes(name)) return platform;
+    const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+    if (new RegExp(`\\b${escaped}\\b`, "i").test(value)) {
+      matches.push({
+        platform,
+        length: name.length
+      });
+    }
   }
 
-  return null;
-}
+  matches.sort((a, b) => b.length - a.length);
 
+  return matches[0]?.platform || null;
+}
 function activateSmartOfficialLinks(article) {
   const container = document.querySelector(".article-content");
+
   if (!container || !article) return;
 
-  const links = {
-  "fokus pada pengamanan akun" : "https://support.google.com/chrome/answer/6294825?hl=id", 
-  "verifikasi kepemilikan Google": "https://support.google.com/webmasters/answer/7687615?hl=id", 
-  "Aktifkan 2FA": "https://support.google.com/accounts/answer/185839",
-  "2-step verification": "https://support.google.com/accounts/answer/185839",
-  "verifikasi dua langkah": "https://support.google.com/accounts/answer/185839",
-  "autentikasi dua faktor": "https://support.google.com/accounts/answer/185839",
+  const platform = getSmartOfficialPlatform(article, container);
 
-  "passkey": "https://support.google.com/accounts/answer/13548313",
+  const links = platform
+    ? OFFICIAL_LINKS[platform] || {}
+    : {};
 
-  "password": "https://myaccount.google.com/security",
-  "kata sandi": "https://myaccount.google.com/security",
-
-  "backup code": "https://support.google.com/accounts/answer/1187538",
-  "backup codes": "https://support.google.com/accounts/answer/1187538",
-  "kode cadangan": "https://support.google.com/accounts/answer/1187538",
-
-  "Google Prompt": "https://support.google.com/accounts/answer/7026266",
-  "Google prompt": "https://support.google.com/accounts/answer/7026266",
-  "prompt": "https://support.google.com/accounts/answer/7026266",
-
-  "OTP": "https://support.google.com/accounts/answer/185839",
-  "kode verifikasi": "https://support.google.com/accounts/answer/185839",
-  "verification code": "https://support.google.com/accounts/answer/185839",
-
-  "recovery": "https://support.google.com/accounts/answer/7682439",
-  "account recovery": "https://support.google.com/accounts/answer/7682439",
-  "pemulihan akun": "https://support.google.com/accounts/answer/7682439",
-
-  "recovery email": "https://support.google.com/accounts/answer/183723",
-  "email pemulihan": "https://support.google.com/accounts/answer/183723",
-
-  "recovery phone": "https://support.google.com/accounts/answer/183723",
-  "nomor pemulihan": "https://support.google.com/accounts/answer/183723",
-
-  "security checkup": "https://myaccount.google.com/security-checkup",
-  "Security Checkup": "https://myaccount.google.com/security-checkup",
-
-  "security settings": "https://myaccount.google.com/security",
-  "pengaturan keamanan": "https://myaccount.google.com/security",
-
-  "perangkat": "https://myaccount.google.com/device-activity",
-  "devices": "https://myaccount.google.com/device-activity",
-
-  "aktivitas keamanan": "https://myaccount.google.com/notifications",
-  "security activity": "https://myaccount.google.com/notifications",
-
-  "third-party apps": "https://myaccount.google.com/connections",
-  "aplikasi pihak ketiga": "https://myaccount.google.com/connections",
-
-  "phishing": "https://support.google.com/accounts/answer/7507744",
-  "link phishing": "https://support.google.com/accounts/answer/7507744",
-
-  "suspicious activity": "https://support.google.com/accounts/answer/140921",
-  "aktivitas mencurigakan": "https://support.google.com/accounts/answer/140921"
-};
+  if (!Object.keys(links).length) return;
 
   const terms = Object.keys(links).sort(
     (a, b) => b.length - a.length
@@ -266,6 +418,25 @@ function activateSmartOfficialLinks(article) {
       textNode.parentNode.replaceChild(fragment, textNode);
     }
   });
+}
+function detectPlatform(article, container) {
+  const text = [
+    article?.title || "",
+    article?.description || "",
+    article?.category || "",
+    ...(article?.tags || []),
+    container?.textContent || ""
+  ].join(" ").toLowerCase();
+
+  if (/\bgoogle\b|\bgmail\b/.test(text)) return "google";
+  if (/\binstagram\b|\big\b/.test(text)) return "instagram";
+  if (/\btiktok\b|\btik tok\b/.test(text)) return "tiktok";
+  if (/\bdiscord\b/.test(text)) return "discord";
+  if (/\bwhatsapp\b|\bwa\b/.test(text)) return "whatsapp";
+  if (/\bfacebook\b|\bfb\b/.test(text)) return "facebook";
+  if (/\btelegram\b/.test(text)) return "telegram";
+
+  return null;
 }
 function saveTheme(){const theme=localStorage.getItem((window.SITE_CONFIG&&window.SITE_CONFIG.themeKey)||'Captain-z-MD.theme');document.body.classList.toggle('theme-dark',theme==='dark'||theme==='black');document.getElementById('themeIndicator').textContent=theme?`Tema: ${theme}`:'Tema otomatis';}
 function renderNav(){
@@ -386,16 +557,16 @@ function articlePage(slug){
               <div class="feedback-buttons">
                 <a href="https://forms.gle/xEDWX3d9S2wvJVPM7"
                    target="_blank"
-                   rel="noopener noreferrer">               
-                  <span>Ya, membantu</span>
+                   rel="noopener noreferrer">
                   <span>👍</span>
+                  <span>Ya, membantu</span>
                 </a>
 
                 <a href="https://forms.gle/xEDWX3d9S2wvJVPM7"
                    target="_blank"
                    rel="noopener noreferrer">
-                  <span>Tidak membantu</span>
                   <span>👎</span>
+                  <span>Tidak membantu</span>
                 </a>
               </div>
             </div>
