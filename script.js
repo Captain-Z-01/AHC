@@ -70,13 +70,6 @@ const searchResults=document.getElementById('searchResults');
 const searchTitle=document.getElementById('searchTitle');
 const sidebarSearch=document.getElementById('sidebarSearch');
 const installBtn=document.getElementById('installBtn');
-const SMART_OFFICIAL_GLOBAL = {
-  "2FA": "https://support.google.com/accounts/answer/185839",
-  "passkey": "https://support.google.com/accounts/answer/13548313",
-  "backup code": "https://support.google.com/accounts/answer/1187538",
-  "kode cadangan": "https://support.google.com/accounts/answer/1187538",
-  "Google Prompt": "https://support.google.com/accounts/answer/7026266"
-};
 
 const SMART_OFFICIAL_ALIASES = {
   "google": "google",
@@ -123,6 +116,7 @@ function activateSmartOfficialLinks(article) {
   if (!container || !article) return;
 
   const links = {
+  "fokus pada keamanan akun" : "https://support.google.com/chrome/answer/6294825?hl=id", 
   "verifikasi kepemilikan Google": "https://support.google.com/webmasters/answer/7687615?hl=id", 
   "2FA": "https://support.google.com/accounts/answer/185839",
   "2-step verification": "https://support.google.com/accounts/answer/185839",
