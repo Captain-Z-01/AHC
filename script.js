@@ -72,217 +72,445 @@ const sidebarSearch=document.getElementById('sidebarSearch');
 const installBtn=document.getElementById('installBtn');
 
 const SMART_OFFICIAL_ALIASES = {
+  // Google
   "google": "google",
   "gmail": "google",
   "akun google": "google",
+  "google account": "google",
+
+  // Instagram
   "instagram": "instagram",
   "ig": "instagram",
+  "akun instagram": "instagram",
+
+  // TikTok
   "tiktok": "tiktok",
   "tik tok": "tiktok",
+  "akun tiktok": "tiktok",
+
+  // Discord
   "discord": "discord",
+  "akun discord": "discord",
+
+  // WhatsApp
   "whatsapp": "whatsapp",
   "wa": "whatsapp",
+  "akun whatsapp": "whatsapp",
+
+  // Facebook
   "facebook": "facebook",
   "fb": "facebook",
+  "akun facebook": "facebook",
+
+  // X / Twitter
+  "x/twitter": "x",
+  "x": "x",
+  "twitter": "x",
+  "akun x": "x",
+  "akun twitter": "x",
+
+  // Telegram
   "telegram": "telegram",
+  "akun telegram": "telegram",
+
+  // Snapchat
+  "snapchat": "snapchat",
+  "snap": "snapchat",
+  "akun snapchat": "snapchat",
+
+  // Free Fire / Garena
   "free fire": "freefire",
+  "freefire": "freefire",
   "garena": "freefire",
+  "akun free fire": "freefire",
+
+  // Mobile Legends
   "mobile legends": "mobilelegends",
+  "mobile legend": "mobilelegends",
+  "mlbb": "mobilelegends",
   "ml": "mobilelegends",
+  "akun mobile legends": "mobilelegends",
+
+  // PUBG Mobile
+  "pubg mobile": "pubg",
   "pubg": "pubg",
+  "akun pubg": "pubg",
+
+  // Roblox
   "roblox": "roblox",
+  "akun roblox": "roblox",
+
+  // Minecraft
   "minecraft": "minecraft",
-  "genshin": "genshin"
+  "akun minecraft": "minecraft",
+
+  // Genshin Impact
+  "genshin impact": "genshin",
+  "genshin": "genshin",
+  "hoyoverse": "genshin",
+  "hoyolab": "genshin",
+  "akun genshin": "genshin"
 };
+
 const OFFICIAL_LINKS = {
   google: {
     "2FA": "https://support.google.com/accounts/answer/185839",
     "2-step verification": "https://support.google.com/accounts/answer/185839",
+    "two-step verification": "https://support.google.com/accounts/answer/185839",
     "verifikasi dua langkah": "https://support.google.com/accounts/answer/185839",
     "autentikasi dua faktor": "https://support.google.com/accounts/answer/185839",
-
     "MFA": "https://support.google.com/accounts/answer/185839",
     "OTP": "https://support.google.com/accounts/answer/185839",
     "verification code": "https://support.google.com/accounts/answer/185839",
     "kode verifikasi": "https://support.google.com/accounts/answer/185839",
-
     "Google Prompt": "https://support.google.com/accounts/answer/7026266",
     "Google prompt": "https://support.google.com/accounts/answer/7026266",
     "prompt": "https://support.google.com/accounts/answer/7026266",
-
     "passkey": "https://support.google.com/accounts/answer/13548313",
     "security key": "https://support.google.com/accounts/answer/6103523",
     "kunci keamanan": "https://support.google.com/accounts/answer/6103523",
-
     "password": "https://myaccount.google.com/security",
     "kata sandi": "https://myaccount.google.com/security",
     "sandi": "https://myaccount.google.com/security",
-
     "backup code": "https://support.google.com/accounts/answer/1187538",
     "backup codes": "https://support.google.com/accounts/answer/1187538",
     "kode cadangan": "https://support.google.com/accounts/answer/1187538",
-
     "recovery": "https://support.google.com/accounts/answer/7682439",
     "account recovery": "https://support.google.com/accounts/answer/7682439",
     "pemulihan akun": "https://support.google.com/accounts/answer/7682439",
-
-    "recovery email": "https://support.google.com/accounts/",
-    "email pemulihan": "https://support.google.com/accounts/",
-
-    "recovery phone": "https://support.google.com/accounts/",
-    "nomor pemulihan": "https://support.google.com/accounts/",
-
+    "recovery email": "https://myaccount.google.com/security",
+    "email pemulihan": "https://myaccount.google.com/security",
+    "recovery phone": "https://myaccount.google.com/security",
+    "nomor pemulihan": "https://myaccount.google.com/security",
     "security checkup": "https://myaccount.google.com/security-checkup",
     "Security Checkup": "https://myaccount.google.com/security-checkup",
-
     "security settings": "https://myaccount.google.com/security",
     "pengaturan keamanan": "https://myaccount.google.com/security",
-
     "devices": "https://myaccount.google.com/device-activity",
     "perangkat": "https://myaccount.google.com/device-activity",
-
     "security activity": "https://myaccount.google.com/notifications",
     "aktivitas keamanan": "https://myaccount.google.com/notifications",
-
     "third-party apps": "https://myaccount.google.com/connections",
     "aplikasi pihak ketiga": "https://myaccount.google.com/connections",
-
     "phishing": "https://support.google.com/accounts/answer/7507744",
     "link phishing": "https://support.google.com/accounts/answer/7507744",
-
     "suspicious activity": "https://support.google.com/accounts/answer/140921",
-    "aktivitas mencurigakan": "https://support.google.com/accounts/answer/140921"
+    "aktivitas mencurigakan": "https://support.google.com/accounts/answer/140921",
+    "akun diretas": "https://accounts.google.com/signin/recovery",
+    "account hacked": "https://accounts.google.com/signin/recovery",
+    "login": "https://accounts.google.com/signin/recovery"
+  },
+
+  instagram: {
+    "2FA": "https://help.instagram.com/",
+    "2-step verification": "https://help.instagram.com/",
+    "two-factor authentication": "https://help.instagram.com/",
+    "MFA": "https://help.instagram.com/",
+    "password": "https://help.instagram.com/",
+    "kata sandi": "https://help.instagram.com/",
+    "sandi": "https://help.instagram.com/",
+    "OTP": "https://help.instagram.com/",
+    "verification code": "https://help.instagram.com/",
+    "kode verifikasi": "https://help.instagram.com/",
+    "recovery": "https://www.instagram.com/hacked/",
+    "account recovery": "https://www.instagram.com/hacked/",
+    "pemulihan akun": "https://www.instagram.com/hacked/",
+    "account hacked": "https://www.instagram.com/hacked/",
+    "akun diretas": "https://www.instagram.com/hacked/",
+    "phishing": "https://help.instagram.com/",
+    "link phishing": "https://help.instagram.com/",
+    "suspicious activity": "https://help.instagram.com/",
+    "aktivitas mencurigakan": "https://help.instagram.com/",
+    "login": "https://help.instagram.com/",
+    "session": "https://help.instagram.com/",
+    "sesi": "https://help.instagram.com/",
+    "device": "https://help.instagram.com/",
+    "perangkat": "https://help.instagram.com/"
   },
 
   tiktok: {
     "2FA": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
     "2-step verification": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
+    "two-step verification": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
     "MFA": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
-
     "password": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
     "kata sandi": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
-
+    "sandi": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
     "OTP": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
     "verification code": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
     "kode verifikasi": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
-
     "passkey": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
-
     "recovery": "https://support.tiktok.com/en/log-in-troubleshoot/log-in/recover-an-account",
+    "account recovery": "https://support.tiktok.com/en/log-in-troubleshoot/log-in/recover-an-account",
     "pemulihan akun": "https://support.tiktok.com/en/log-in-troubleshoot/log-in/recover-an-account",
-
+    "account hacked": "https://support.tiktok.com/en/log-in-troubleshoot/log-in/recover-an-account",
+    "akun diretas": "https://support.tiktok.com/en/log-in-troubleshoot/log-in/recover-an-account",
     "phishing": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/avoid-fraudulent-message-attacks-on-tiktok",
-
+    "link phishing": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/avoid-fraudulent-message-attacks-on-tiktok",
     "suspicious activity": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
-    "perangkat": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety"
-  },
-
-  instagram: {
-    "2FA": "https://help.instagram.com/",
-    "MFA": "https://help.instagram.com/",
-
-    "password": "https://help.instagram.com/",
-    "kata sandi": "https://help.instagram.com/",
-
-    "OTP": "https://help.instagram.com/",
-    "verification code": "https://help.instagram.com/",
-    "kode verifikasi": "https://help.instagram.com/",
-
-    "recovery": "https://www.instagram.com/hacked/",
-    "account recovery": "https://www.instagram.com/hacked/",
-    "pemulihan akun": "https://www.instagram.com/hacked/",
-
-    "phishing": "https://help.instagram.com/",
-    "link phishing": "https://help.instagram.com/",
-
-    "suspicious activity": "https://help.instagram.com/",
-    "aktivitas mencurigakan": "https://help.instagram.com/",
-
-    "login": "https://help.instagram.com/",
-    "session": "https://help.instagram.com/",
-    "device": "https://help.instagram.com/"
+    "aktivitas mencurigakan": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
+    "perangkat": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
+    "device": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety"
   },
 
   discord: {
     "2FA": "https://support.discord.com/hc/en-us",
+    "2-step verification": "https://support.discord.com/hc/en-us",
+    "two-factor authentication": "https://support.discord.com/hc/en-us",
     "MFA": "https://support.discord.com/hc/en-us",
-
     "password": "https://support.discord.com/hc/en-us",
     "kata sandi": "https://support.discord.com/hc/en-us",
-
+    "sandi": "https://support.discord.com/hc/en-us",
     "OTP": "https://support.discord.com/hc/en-us",
     "verification code": "https://support.discord.com/hc/en-us",
     "kode verifikasi": "https://support.discord.com/hc/en-us",
-
     "backup code": "https://support.discord.com/hc/en-us",
     "backup codes": "https://support.discord.com/hc/en-us",
     "kode cadangan": "https://support.discord.com/hc/en-us",
-
     "authenticator": "https://support.discord.com/hc/en-us",
     "authenticator app": "https://support.discord.com/hc/en-us",
-
     "account hacked": "https://support.discord.com/hc/en-us",
-    "akun diretas": "https://support.discord.com/hc/en-us"
+    "akun diretas": "https://support.discord.com/hc/en-us",
+    "recovery": "https://support.discord.com/hc/en-us",
+    "pemulihan akun": "https://support.discord.com/hc/en-us",
+    "phishing": "https://support.discord.com/hc/en-us",
+    "login": "https://support.discord.com/hc/en-us",
+    "perangkat": "https://support.discord.com/hc/en-us",
+    "device": "https://support.discord.com/hc/en-us"
   },
 
   whatsapp: {
     "2FA": "https://faq.whatsapp.com/",
     "two-step verification": "https://faq.whatsapp.com/",
     "verifikasi dua langkah": "https://faq.whatsapp.com/",
-
+    "MFA": "https://faq.whatsapp.com/",
     "PIN": "https://faq.whatsapp.com/",
     "OTP": "https://faq.whatsapp.com/",
-
     "verification code": "https://faq.whatsapp.com/",
     "kode verifikasi": "https://faq.whatsapp.com/",
     "registration code": "https://faq.whatsapp.com/",
-
+    "kode registrasi": "https://faq.whatsapp.com/",
     "recovery": "https://faq.whatsapp.com/",
     "pemulihan akun": "https://faq.whatsapp.com/",
-
     "account hacked": "https://faq.whatsapp.com/",
-    "akun diretas": "https://faq.whatsapp.com/"
+    "akun diretas": "https://faq.whatsapp.com/",
+    "phishing": "https://faq.whatsapp.com/",
+    "login": "https://faq.whatsapp.com/",
+    "perangkat": "https://faq.whatsapp.com/",
+    "device": "https://faq.whatsapp.com/"
   },
 
   facebook: {
     "2FA": "https://www.facebook.com/help/",
+    "2-step verification": "https://www.facebook.com/help/",
+    "two-factor authentication": "https://www.facebook.com/help/",
     "MFA": "https://www.facebook.com/help/",
-
     "password": "https://www.facebook.com/help/",
     "kata sandi": "https://www.facebook.com/help/",
-
+    "sandi": "https://www.facebook.com/help/",
     "OTP": "https://www.facebook.com/help/",
     "verification code": "https://www.facebook.com/help/",
     "kode verifikasi": "https://www.facebook.com/help/",
-
     "recovery": "https://www.facebook.com/hacked/",
     "account recovery": "https://www.facebook.com/hacked/",
     "pemulihan akun": "https://www.facebook.com/hacked/",
-
+    "account hacked": "https://www.facebook.com/hacked/",
+    "akun diretas": "https://www.facebook.com/hacked/",
     "phishing": "https://www.facebook.com/help/",
     "link phishing": "https://www.facebook.com/help/",
-
     "suspicious activity": "https://www.facebook.com/help/",
-    "aktivitas mencurigakan": "https://www.facebook.com/help/"
+    "aktivitas mencurigakan": "https://www.facebook.com/help/",
+    "login": "https://www.facebook.com/help/",
+    "session": "https://www.facebook.com/help/",
+    "sesi": "https://www.facebook.com/help/",
+    "device": "https://www.facebook.com/help/",
+    "perangkat": "https://www.facebook.com/help/"
+  },
+
+  x: {
+    "2FA": "https://help.x.com/en/safety-and-security/two-factor-authentication",
+    "2-step verification": "https://help.x.com/en/safety-and-security/two-factor-authentication",
+    "two-factor authentication": "https://help.x.com/en/safety-and-security/two-factor-authentication",
+    "MFA": "https://help.x.com/en/safety-and-security/two-factor-authentication",
+    "password": "https://help.x.com/en/managing-your-account/forgot-password",
+    "kata sandi": "https://help.x.com/en/managing-your-account/forgot-password",
+    "sandi": "https://help.x.com/en/managing-your-account/forgot-password",
+    "OTP": "https://help.x.com/en/managing-your-account/account-access",
+    "verification code": "https://help.x.com/en/managing-your-account/account-access",
+    "kode verifikasi": "https://help.x.com/en/managing-your-account/account-access",
+    "recovery": "https://help.x.com/en/forms/account-access/regain-access",
+    "account recovery": "https://help.x.com/en/forms/account-access/regain-access",
+    "pemulihan akun": "https://help.x.com/en/forms/account-access/regain-access",
+    "account hacked": "https://help.x.com/en/forms/account-access/regain-access",
+    "akun diretas": "https://help.x.com/en/forms/account-access/regain-access",
+    "phishing": "https://help.x.com/en/safety-and-security",
+    "link phishing": "https://help.x.com/en/safety-and-security",
+    "suspicious activity": "https://help.x.com/en/safety-and-security",
+    "aktivitas mencurigakan": "https://help.x.com/en/safety-and-security",
+    "login": "https://help.x.com/en/managing-your-account/account-access",
+    "session": "https://help.x.com/en/managing-your-account/account-access",
+    "device": "https://help.x.com/en/managing-your-account/account-access",
+    "perangkat": "https://help.x.com/en/managing-your-account/account-access"
   },
 
   telegram: {
     "2FA": "https://telegram.org/faq#q-what-is-two-step-verification",
     "two-step verification": "https://telegram.org/faq#q-what-is-two-step-verification",
     "verifikasi dua langkah": "https://telegram.org/faq#q-what-is-two-step-verification",
-
+    "MFA": "https://telegram.org/faq#q-what-is-two-step-verification",
     "password": "https://telegram.org/faq#q-what-is-two-step-verification",
     "kata sandi": "https://telegram.org/faq#q-what-is-two-step-verification",
-
+    "sandi": "https://telegram.org/faq#q-what-is-two-step-verification",
     "OTP": "https://telegram.org/faq",
     "verification code": "https://telegram.org/faq",
     "kode verifikasi": "https://telegram.org/faq",
-
     "login code": "https://telegram.org/faq",
     "kode login": "https://telegram.org/faq",
-
     "recovery": "https://telegram.org/faq",
-    "pemulihan akun": "https://telegram.org/faq"
+    "pemulihan akun": "https://telegram.org/faq",
+    "account hacked": "https://telegram.org/faq",
+    "akun diretas": "https://telegram.org/faq",
+    "phishing": "https://telegram.org/faq",
+    "login": "https://telegram.org/faq",
+    "perangkat": "https://telegram.org/faq",
+    "device": "https://telegram.org/faq"
+  },
+
+  snapchat: {
+    "2FA": "https://help.snapchat.com/hc/en-us/articles/7012305582484",
+    "two-factor authentication": "https://help.snapchat.com/hc/en-us/articles/7012305582484",
+    "verifikasi dua langkah": "https://help.snapchat.com/hc/en-us/articles/7012305582484",
+    "MFA": "https://help.snapchat.com/hc/en-us/articles/7012305582484",
+    "password": "https://help.snapchat.com/hc/en-us/articles/7012306701076",
+    "kata sandi": "https://help.snapchat.com/hc/en-us/articles/7012306701076",
+    "OTP": "https://help.snapchat.com/hc/en-us",
+    "verification code": "https://help.snapchat.com/hc/en-us",
+    "kode verifikasi": "https://help.snapchat.com/hc/en-us",
+    "recovery": "https://help.snapchat.com/hc/en-us",
+    "account recovery": "https://help.snapchat.com/hc/en-us",
+    "pemulihan akun": "https://help.snapchat.com/hc/en-us",
+    "account hacked": "https://help.snapchat.com/hc/en-us",
+    "akun diretas": "https://help.snapchat.com/hc/en-us",
+    "phishing": "https://help.snapchat.com/hc/en-us",
+    "suspicious activity": "https://help.snapchat.com/hc/en-us",
+    "aktivitas mencurigakan": "https://help.snapchat.com/hc/en-us",
+    "login": "https://help.snapchat.com/hc/en-us",
+    "perangkat": "https://help.snapchat.com/hc/en-us",
+    "device": "https://help.snapchat.com/hc/en-us"
+  },
+
+  freefire: {
+    "2FA": "https://ffsupport.garena.com/",
+    "MFA": "https://ffsupport.garena.com/",
+    "password": "https://ffsupport.garena.com/",
+    "kata sandi": "https://ffsupport.garena.com/",
+    "OTP": "https://ffsupport.garena.com/",
+    "verification code": "https://ffsupport.garena.com/",
+    "kode verifikasi": "https://ffsupport.garena.com/",
+    "recovery": "https://ffsupport.garena.com/",
+    "account recovery": "https://ffsupport.garena.com/",
+    "pemulihan akun": "https://ffsupport.garena.com/",
+    "account hacked": "https://ffsupport.garena.com/",
+    "akun diretas": "https://ffsupport.garena.com/",
+    "phishing": "https://ffsupport.garena.com/",
+    "login": "https://ffsupport.garena.com/",
+    "perangkat": "https://ffsupport.garena.com/",
+    "device": "https://ffsupport.garena.com/"
+  },
+
+  mobilelegends: {
+    "2FA": "https://support.moonton.com/",
+    "MFA": "https://support.moonton.com/",
+    "password": "https://support.moonton.com/",
+    "kata sandi": "https://support.moonton.com/",
+    "OTP": "https://support.moonton.com/",
+    "verification code": "https://support.moonton.com/",
+    "kode verifikasi": "https://support.moonton.com/",
+    "recovery": "https://support.moonton.com/",
+    "account recovery": "https://support.moonton.com/",
+    "pemulihan akun": "https://support.moonton.com/",
+    "account hacked": "https://support.moonton.com/",
+    "akun diretas": "https://support.moonton.com/",
+    "phishing": "https://support.moonton.com/",
+    "login": "https://support.moonton.com/",
+    "perangkat": "https://support.moonton.com/",
+    "device": "https://support.moonton.com/"
+  },
+
+  pubg: {
+    "2FA": "https://support.pubgmobile.com/",
+    "MFA": "https://support.pubgmobile.com/",
+    "password": "https://support.pubgmobile.com/",
+    "kata sandi": "https://support.pubgmobile.com/",
+    "OTP": "https://support.pubgmobile.com/",
+    "verification code": "https://support.pubgmobile.com/",
+    "kode verifikasi": "https://support.pubgmobile.com/",
+    "recovery": "https://support.pubgmobile.com/",
+    "account recovery": "https://support.pubgmobile.com/",
+    "pemulihan akun": "https://support.pubgmobile.com/",
+    "account hacked": "https://support.pubgmobile.com/",
+    "akun diretas": "https://support.pubgmobile.com/",
+    "phishing": "https://support.pubgmobile.com/",
+    "login": "https://support.pubgmobile.com/",
+    "perangkat": "https://support.pubgmobile.com/",
+    "device": "https://support.pubgmobile.com/"
+  },
+
+  roblox: {
+    "2FA": "https://www.roblox.com/support",
+    "MFA": "https://www.roblox.com/support",
+    "password": "https://www.roblox.com/support",
+    "kata sandi": "https://www.roblox.com/support",
+    "OTP": "https://www.roblox.com/support",
+    "verification code": "https://www.roblox.com/support",
+    "kode verifikasi": "https://www.roblox.com/support",
+    "recovery": "https://www.roblox.com/support",
+    "account recovery": "https://www.roblox.com/support",
+    "pemulihan akun": "https://www.roblox.com/support",
+    "account hacked": "https://www.roblox.com/support",
+    "akun diretas": "https://www.roblox.com/support",
+    "phishing": "https://www.roblox.com/support",
+    "login": "https://www.roblox.com/support",
+    "perangkat": "https://www.roblox.com/support",
+    "device": "https://www.roblox.com/support"
+  },
+
+  minecraft: {
+    "2FA": "https://help.minecraft.net/",
+    "MFA": "https://help.minecraft.net/",
+    "password": "https://help.minecraft.net/",
+    "kata sandi": "https://help.minecraft.net/",
+    "OTP": "https://help.minecraft.net/",
+    "verification code": "https://help.minecraft.net/",
+    "kode verifikasi": "https://help.minecraft.net/",
+    "recovery": "https://help.minecraft.net/",
+    "account recovery": "https://help.minecraft.net/",
+    "pemulihan akun": "https://help.minecraft.net/",
+    "account hacked": "https://help.minecraft.net/",
+    "akun diretas": "https://help.minecraft.net/",
+    "phishing": "https://help.minecraft.net/",
+    "login": "https://help.minecraft.net/",
+    "perangkat": "https://help.minecraft.net/",
+    "device": "https://help.minecraft.net/"
+  },
+
+  genshin: {
+    "2FA": "https://support.hoyoverse.com/",
+    "MFA": "https://support.hoyoverse.com/",
+    "password": "https://support.hoyoverse.com/",
+    "kata sandi": "https://support.hoyoverse.com/",
+    "OTP": "https://support.hoyoverse.com/",
+    "verification code": "https://support.hoyoverse.com/",
+    "kode verifikasi": "https://support.hoyoverse.com/",
+    "recovery": "https://support.hoyoverse.com/",
+    "account recovery": "https://support.hoyoverse.com/",
+    "pemulihan akun": "https://support.hoyoverse.com/",
+    "account hacked": "https://support.hoyoverse.com/",
+    "akun diretas": "https://support.hoyoverse.com/",
+    "phishing": "https://support.hoyoverse.com/",
+    "login": "https://support.hoyoverse.com/",
+    "perangkat": "https://support.hoyoverse.com/",
+    "device": "https://support.hoyoverse.com/"
   }
 };
 function getSmartOfficialPlatform(article, container) {
