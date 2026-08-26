@@ -202,31 +202,39 @@ const OFFICIAL_LINKS = {
   },
 
   instagram: {
-    "2FA": "https://help.instagram.com/",
-    "2-step verification": "https://help.instagram.com/",
-    "two-factor authentication": "https://help.instagram.com/",
-    "MFA": "https://help.instagram.com/",
-    "password": "https://help.instagram.com/",
-    "kata sandi": "https://help.instagram.com/",
-    "sandi": "https://help.instagram.com/",
-    "OTP": "https://help.instagram.com/",
-    "verification code": "https://help.instagram.com/",
-    "kode verifikasi": "https://help.instagram.com/",
-    "recovery": "https://www.instagram.com/hacked/",
-    "account recovery": "https://www.instagram.com/hacked/",
-    "pemulihan akun": "https://www.instagram.com/hacked/",
-    "account hacked": "https://www.instagram.com/hacked/",
-    "akun diretas": "https://www.instagram.com/hacked/",
-    "phishing": "https://help.instagram.com/",
-    "link phishing": "https://help.instagram.com/",
-    "suspicious activity": "https://help.instagram.com/",
-    "aktivitas mencurigakan": "https://help.instagram.com/",
-    "login": "https://help.instagram.com/",
-    "session": "https://help.instagram.com/",
-    "sesi": "https://help.instagram.com/",
-    "device": "https://help.instagram.com/",
-    "perangkat": "https://help.instagram.com/"
-  },
+  "2FA": "https://www.instagram.com/accounts/login/",
+  "2-step verification": "https://www.instagram.com/accounts/login/",
+  "two-factor authentication": "https://www.instagram.com/accounts/login/",
+  "MFA": "https://www.instagram.com/accounts/login/",
+
+  "password": "https://www.instagram.com/accounts/password/reset/",
+  "kata sandi": "https://www.instagram.com/accounts/password/reset/",
+  "sandi": "https://www.instagram.com/accounts/password/reset/",
+
+  "OTP": "https://www.instagram.com/accounts/login/",
+  "verification code": "https://www.instagram.com/accounts/login/",
+  "kode verifikasi": "https://www.instagram.com/accounts/login/",
+
+  "recovery": "https://www.instagram.com/hacked/",
+  "account recovery": "https://www.instagram.com/hacked/",
+  "pemulihan akun": "https://www.instagram.com/hacked/",
+
+  "account hacked": "https://www.instagram.com/hacked/",
+  "akun diretas": "https://www.instagram.com/hacked/",
+
+  "phishing": "https://help.instagram.com/",
+  "link phishing": "https://help.instagram.com/",
+
+  "suspicious activity": "https://help.instagram.com/",
+  "aktivitas mencurigakan": "https://help.instagram.com/",
+
+  "login": "https://www.instagram.com/accounts/login/",
+  "session": "https://www.instagram.com/accounts/login/",
+  "sesi": "https://www.instagram.com/accounts/login/",
+
+  "device": "https://www.instagram.com/accounts/login/",
+  "perangkat": "https://www.instagram.com/accounts/login/"
+}, 
 
   tiktok: {
     "2FA": "https://support.tiktok.com/en/safety-hc/account-and-user-safety/account-safety",
